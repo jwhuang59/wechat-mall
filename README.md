@@ -5,17 +5,6 @@
 
 <img src="https://github.com/jwhuang59/wechat-mall/blob/master/image/1.jpg" width="280">  <img src="https://github.com/jwhuang59/wechat-mall/blob/master/image/2.jpg" width="280"> <img src="https://github.com/jwhuang59/wechat-mall/blob/master/image/8.jpg" width="280"> <img src="https://github.com/jwhuang59/wechat-mall/blob/master/image/3.jpg" width="280"> <img src="https://github.com/jwhuang59/wechat-mall/blob/master/image/4.jpg" width="280"><img src="https://github.com/jwhuang59/wechat-mall/blob/master/image/5.jpg" width="280"><img src="https://github.com/jwhuang59/wechat-mall/blob/master/image/6.jpg" width="280"><img src="https://github.com/jwhuang59/wechat-mall/blob/master/image/7.jpg" width="280">
 
-#### 功能
-
-- [x] 首页
-- [x] 搜索
-- [x] 分类
-- [x] 购物车
-- [x] 个人中心
-- [x] 商品列表
-- [x] 商品详情
-- [x] 订单
-- [x] 地址管理
 
 #### 安装与运行
 
