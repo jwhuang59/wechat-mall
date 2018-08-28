@@ -1,0 +1,34 @@
+<view class="main">
+    <view class="search">
+        <navigator url="../search/search">
+            <view class="search-text">
+                <icon class="weui-icon-search_in-box search-icon" type="search" size="14"></icon>
+                搜索店铺内商品
+            </view>
+        </navigator>
+    </view>
+    <view class="category-wrap">
+      <view class="categroy-left">
+          <view wx:for="{{category}}" wx:key="{{index}}" data-type="{{item.type}}" data-index="{{index}}" wx:if="{{item.level == 1}}"
+              bindtap="switchTab"
+              class="cate-list {{curIndex === index?'on':''}}">{{item.name}}</view>
+      </view>
+
+      <scroll-view class="categroy-right">
+
+        <block wx:for="{{category}}" wx:key="{{index}}" wx:if="{{item.type == type}}">
+          <view wx:if="{{item.level == 1}}" class="topsub">
+            <image src="{{item.icon}}"></image>
+            <text>{{item.name}}</text>
+          </view>
+          <view wx:if="{{item.level == 2}}" class="menu">
+            <navigator url="../list/list?categoryId={{item.id}}">
+              <image src="{{item.icon}}"></image>
+              <text>{{item.name}}</text>
+            </navigator>
+          </view>
+        </block>
+        
+      </scroll-view>
+    </view>
+</view>

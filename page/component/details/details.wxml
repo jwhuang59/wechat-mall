@@ -1,0 +1,75 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+
+<view class="main">
+
+      <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="true" style="height:{{imgHeight}}px">
+          <block wx:for="{{detailData.pics}}" wx:key="{{index}}">
+              <swiper-item>
+                  <image src="{{item.pic}}" class="slide-image" width="100%" mode="widthFix" />
+              </swiper-item>
+          </block>
+      </swiper>
+      <view class="pro_room">
+        <view class="pro_title"><text>{{detailData.basicInfo.name}}</text><image src="../../../image/share.jpg"></image></view>
+        <view class="pro_price">
+            <view class="newprice">￥<text>{{detailData.basicInfo.minPrice}}</text>.00</view>
+            <view class="oldprice">￥<text>{{detailData.basicInfo.originalPrice}}</text>.00</view>
+        </view>
+        <view class="query"><text>运费：快递包邮（偏远其他地区不配送）</text></view>
+
+        <view class="pro_sku">
+          <text>产品</text>
+          <view class="prolist {{skuIndex === index ?'hassku':''}}" bindtap="bindTapSku" data-sku="{{index}}" data-name="{{item.name}}" wx:for="{{detailData.properties[0].childsCurGoods}}" wx:key="{{index}}" >{{item.name}}</view>
+        </view>
+        <view class="pro_sku">
+          <text>数量</text>
+          <view class="pro-operation">
+            <view class="operation-reduce {{disabled === false ? 'disabled':''}}" bindtap="reduceCount">-</view>
+            <view class="operation-num">{{num}}</view>
+            <view class="operation-add" bindtap="addCount">+</view>
+          </view>
+        </view>
+
+
+      </view>
+
+    <view class="saleCart">
+      <view class="customer"><text>客服</text><image src="../../../image/customer.png"></image></view>
+      <navigator url="../index" class="subhome" open-type="switchTab">
+        <view class="home"><text>首页</text><image src="../../../image/home2.png"></image></view>
+      </navigator>
+      <navigator open-type="switchTab" url="../cart/cart" class="salecar">
+          <view class="cartcar">
+              <text>购物车</text>
+              <image src="/image/cart2.png"></image>
+          </view>
+          <view  class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</view>
+      </navigator>
+      <view class="joincart" bindtap="addToCart">
+        <text>加入购物车</text>
+      </view>
+      <navigator url="../cart/cart" class="oncart" open-type="switchTab">
+        <view>立即购买</view>
+      </navigator>
+    </view>
+
+
+    <view class="goods-tab-box">
+        <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">商品详情</view>
+        <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">产品参数</view>
+        <view class="goods-tab-nav {{curIndex === 2 ?'on':''}}" bindtap="bindTap" data-index="2">售后保障</view>
+        <view class="goods-content">
+            <view wx:if="{{curIndex === 0}}"><template is="wxParse" data="{{wxParseData:pro_msg.nodes}}"/></view>
+            <view wx:if="{{curIndex === 1}}">暂无</view>
+            <view wx:if="{{curIndex === 2}}">
+              <view class="aftersale">
+                <text>权利声明</text>
+                本站商品信息均来自于厂商，其真实性、准确性和合法性由信息拥有者（厂商）负责。本站不提供任何保证，并不承担任何法律责任。                           <text>价格说明</text>
+                如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。
+                <text>退货说明</text>
+                暂不支持退货
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

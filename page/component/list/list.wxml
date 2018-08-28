@@ -1,0 +1,22 @@
+<view class="main">
+    <view class="nav">
+      <view class="text line {{num==1?'show':''}}" data-num="1" data-sort="" bindtap='navClick'>推荐</view>
+      <view class="text line {{num==2?'show':''}}" data-num="2" data-sort="ordersDown" bindtap='navClick'>销量</view>
+      <view class="text {{num==3?'show':''}} {{priceSort}}" data-num="3" data-sort="{{priceSort}}" bindtap='navClick'>价格<view class="priceUp"></view><view class="priceDown"></view></view>
+    </view>
+    <view class="content">
+      <view wx:for="{{detailList}}" wx:key="{{index}}">
+        <navigator url="../details/details?detailId={{item.id}}">
+          <view class="detail_list" >
+            <image src="{{item.pic}}" mode="widthFix"></image>
+            <text>{{item.name}}</text>
+            <view class="detail_msg">
+              <view class="newprice">￥<text>{{item.minPrice}}</text>.00</view>
+              <view class="oldprice">￥<text>{{item.originalPrice}}</text>.00</view>
+              <view class="tuijian">{{item.recommendStatusStr}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+</view>

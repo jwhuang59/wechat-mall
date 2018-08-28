@@ -1,0 +1,16 @@
+<view class="main">
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="true">
+        <block wx:for="{{bannerImg}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="100%"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="wrap-content" >
+      <block wx:for="{{mainData}}" wx:key="{{index}}">
+        <view wx:if="{{index == 0}}" class="item-img0"><image src="{{item.picUrl}}" /></view>
+        <view wx:if="{{index > 0}}"><navigator url="{{item.linkUrl}}"><image src="{{item.picUrl}}" /></navigator></view>
+      </block>
+    </view>
+    
+</view>

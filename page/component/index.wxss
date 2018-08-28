@@ -1,0 +1,14 @@
+
+swiper {
+    height: 188px;
+}
+swiper-item image {
+    width: 100%;
+    height: 100%;
+}
+
+navigator{height:240px}
+
+.wrap-content image{width:100%;}
+.item-img0{height:173px;}
+.item-img0 image{height:173px;}

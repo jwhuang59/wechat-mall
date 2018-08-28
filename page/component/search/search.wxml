@@ -1,0 +1,52 @@
+<view class="main">
+    <view class="search-box">
+        <input class="search-input" placeholder="搜索" value="{{value}}" bindinput="searchInput" />
+        <icon class="weui-icon-search_in-box search-icon" type="search" size="14"></icon>
+        <text class="search-btn" wx:if="{{showResult}}" bindtap="cancelSearch">取消</text>
+        <text class="search-btn" wx:else data-text="{{value}}" bindtap="keywordHandle">确定</text>
+    </view>
+    <view class="result" wx:if="{{showResult}}">
+        <view class="result-box" wx:if="{{keywords.length > 0}}">
+          <navigator url="../details/details?detailId={{item.id}}">
+            <view class="detail_list" wx:for="{{keywords}}" wx:key="{{index}}">
+              <image src="{{item.pic}}" mode="widthFix"></image>
+              <text>{{item.name}}</text>
+              <view class="detail_msg">
+                <view class="newprice">￥<text>{{item.minPrice}}</text>.00</view>
+                <view class="oldprice">￥<text>{{item.originalPrice}}</text>.00</view>
+                <view class="tuijian">{{item.recommendStatusStr}}</view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view class="result-null" wx:else>
+            <view class="null-tips">Oh~~ 搜索结果为空！</view>
+        </view>
+    </view>
+    <view class="init-page" wx:else>
+        <view wx:if="{{history.length > 0}}">
+            <view class="title">
+                <text>搜索记录</text>
+            </view>
+            <view class="tags">
+                <text wx:for="{{history}}" wx:key="index" data-text="{{item}}" bindtap="keywordHandle">{{item}}</text>
+            </view>
+        </view>
+        <view class="title">
+            <text>热点推荐</text>
+        </view>
+        <view class="tags">
+            <text wx:for="{{hot}}" wx:key="index" data-text="{{item}}" bindtap="keywordHandle">{{item}}</text>
+        </view>
+    </view>
+
+    <view class="keywords" wx:if="{{showKeywords}}">
+      <view wx:for="{{keywords}}" wx:key="{{index}}">
+        <navigator url="../details/details?detailId={{item.id}}">
+          <view class="keywords-item" data-text="{{item.name}}">{{item.name}}</view>
+        </navigator>
+      </view>
+    </view>
+
+
+</view>

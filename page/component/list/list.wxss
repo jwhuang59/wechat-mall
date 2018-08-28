@@ -1,0 +1,25 @@
+page{background:#f5f5f5;}
+.nav{width:100%;height:40px;line-height:40px;position:fixed;left:0;top:0;display:flex;justify-content: center;background:#fff;}
+.nav .text{width:30%;display:block;text-align:center;font-size:16px;position:relative;}
+.nav .show{color:#AB956D}
+.nav .line:after{content:'';position:absolute;right:0;top:10px;width:1px;height:20px;background:#ddd;}
+
+.nav .text .priceUp{width: 0;height: 0;border-bottom: 6px solid #ccc;border-left: 3px solid transparent;border-right: 3px solid transparent;transition:all 0.6s;display:inline;position:absolute;top:13px;left:68%}
+.nav .text .priceDown{width: 0;height: 0;border-top: 6px solid #ccc;border-left: 3px solid transparent;border-right: 3px solid transparent;transition:all 0.6s;display:inline;position:absolute;bottom:13px;left:68%}
+
+.nav .priceUp .priceUp{border-bottom: 6px solid #AB956D;}
+.nav .priceDown .priceDown{border-top: 6px solid #AB956D;}
+
+.content{padding-top:40px;overflow:auto;box-sizing: border-box}
+
+
+.detail_list{width:48%;margin:1%;background:#fff;float:left;}
+.detail_list image{width:100%;}
+.detail_list>text{font-size:15px;margin:8px 5px;overflow:hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+
+.detail_msg{font-size:14px;margin:10px 3px 15px;}
+.detail_msg>view{display:inline-block;}
+.detail_msg .newprice{color:red;}
+.detail_msg .newprice text{font-size:18px;}
+.detail_msg .oldprice{text-decoration:line-through;color:#999;font-size:12px;}
+.detail_msg .tuijian{background:red;color:#fff;padding:1px;float:right;margin-right:10px;font-size:14px;vertical-align: middle;}

@@ -1,0 +1,101 @@
+
+
+.search-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 26rpx;
+    margin:0 20rpx
+}
+.search-input {
+    flex: 1;
+    width:100%;
+    box-sizing:border-box;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0 20rpx 0 54rpx;
+    background: #f8f8f8;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    border: 2rpx solid #ddd;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15rpx;
+    top: 44rpx;
+    width: 35rpx;
+    height: 35rpx;
+}
+.search-btn{
+  width:12%;
+    font-size: 32rpx;
+    padding: 0 20rpx;
+    line-height: 64rpx;
+}
+.init-page{margin:0 20rpx;}
+
+.title{
+    font-size: 32rpx;
+    margin: 30rpx 0;
+}
+.title text{
+    padding-right: 30rpx;
+    padding-bottom: 10rpx;
+    color: #AB956D;
+    border-bottom: 8rpx solid #AB956D;
+}
+.tags text{
+  max-width:120px;
+  height:24px;
+  line-height: 24px;
+  text-overflow:ellipsis;
+white-space: nowrap;
+  overflow:hidden;
+    display: inline-block;
+    font-size: 28rpx;
+    padding: 0 20rpx;
+    border: 2rpx solid #ddd;
+    color: #aaa;
+    margin: 0 30rpx 20rpx 0;
+    border-radius: 40rpx;
+    word-break: break-all;
+}
+.keywords{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 90rpx;
+    background: #fff;
+    z-index: 9;
+    padding: 20rpx;
+    box-sizing: border-box;
+    
+}
+.keywords-item{
+    line-height: 70rpx;
+    background: #f8f8f8;
+    border-bottom:1px solid #eee;
+    color: #787878;
+    font-size: 28rpx;
+    overflow:hidden;
+    padding: 10rpx;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.result{
+    margin-top: 30rpx;
+    overflow:auto;
+}
+
+
+.detail_list{width:48%;margin:1%;background:#fff;float:left;}
+.detail_list image{width:100%;}
+.detail_list>text{font-size:15px;margin:8px 5px;overflow:hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+
+.detail_msg{font-size:14px;margin:10px 3px 15px;}
+.detail_msg>view{display:inline-block;}
+.detail_msg .newprice{color:red;}
+.detail_msg .newprice text{font-size:18px;}
+.detail_msg .oldprice{text-decoration:line-through;color:#999;font-size:12px;}
+.detail_msg .tuijian{background:red;color:#fff;padding:1px;float:right;margin-right:10px;font-size:14px;vertical-align: middle;}
